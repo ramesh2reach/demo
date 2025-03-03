@@ -3,10 +3,13 @@ package com.imps.controller;
 import com.imps.dto.PolicyRequest;
 import com.imps.dto.PolicyResponse;
 import com.imps.service.PolicyService;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
@@ -25,8 +28,17 @@ public class PolicyControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @MockBean
+    @Mock
     private PolicyService policyService;
+
+
+    @InjectMocks
+    private PolicyController policyController;
+
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
+    }
 
     @Test
     @WithMockUser(username = "user1", roles = {"USER"})
