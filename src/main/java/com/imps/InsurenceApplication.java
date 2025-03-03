@@ -1,14 +1,11 @@
 package com.imps;
 
-import io.jsonwebtoken.io.Encoders;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import javax.crypto.KeyGenerator;
-import javax.crypto.SecretKey;
-import java.security.NoSuchAlgorithmException;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+//@ComponentScan(basePackages = {"com.imps.service", "com.imps.controller"})
 public class InsurenceApplication {
 
     public static void main(String[] args) {

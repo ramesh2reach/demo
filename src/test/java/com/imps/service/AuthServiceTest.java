@@ -15,14 +15,14 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
-import java.util.Optional;
+import org.springframework.stereotype.Service;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
+@Service
 public class AuthServiceTest {
 
     @Mock
@@ -39,6 +39,10 @@ public class AuthServiceTest {
 
     @InjectMocks
     private AuthService authService;
+
+    public AuthServiceTest(AuthenticationManager authenticationManager) {
+        this.authenticationManager = authenticationManager;
+    }
 
     @Test
     void registerUser_Success() {

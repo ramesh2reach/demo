@@ -19,8 +19,15 @@ import java.util.List;
 @RequestMapping("/api/policies")
 public class PolicyController {
 
+    /*@Autowired
+    private PolicyService policyService;*/
+
+    private final PolicyService policyService;
+
     @Autowired
-    private PolicyService policyService;
+    public PolicyController(PolicyService policyService) {
+        this.policyService = policyService;
+    }
 
     // Create a new policy (USER only)
     @PostMapping

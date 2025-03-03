@@ -31,9 +31,8 @@ public class PolicyControllerTest {
     @Mock
     private PolicyService policyService;
 
-
-    @InjectMocks
-    private PolicyController policyController;
+    /*@InjectMocks
+    private PolicyController policyController;*/
 
     @BeforeEach
     void setUp() {

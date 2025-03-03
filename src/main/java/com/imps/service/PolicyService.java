@@ -13,16 +13,24 @@ import com.imps.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PolicyService {
 
-    @Autowired
+    /*@Autowired
     private PolicyRepository policyRepository;
 
     @Autowired
-    private UserRepository userRepository;
+    private UserRepository userRepository;*/
+
+    private final PolicyRepository policyRepository;
+    private final UserRepository userRepository;
+
+    @Autowired
+    public PolicyService(PolicyRepository policyRepository, UserRepository userRepository) {
+        this.policyRepository = policyRepository;
+        this.userRepository = userRepository;
+    }
 
     // Create a new policy (USER only)
     public PolicyResponse createPolicy(PolicyRequest request, Long userId) {
