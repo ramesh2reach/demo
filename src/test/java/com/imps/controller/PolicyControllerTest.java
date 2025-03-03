@@ -1,8 +1,8 @@
-package com.imps.service;
+package com.imps.controller;
 
-import com.imps.controller.PolicyController;
 import com.imps.dto.PolicyRequest;
 import com.imps.dto.PolicyResponse;
+import com.imps.service.PolicyService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
