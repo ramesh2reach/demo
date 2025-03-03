@@ -7,6 +7,17 @@ public class PolicyResponse {
     private double premiumAmount;
     private Long userId;
 
+    public PolicyResponse() {
+    }
+
+    public PolicyResponse(Long id, String policyName, String policyType, double premiumAmount, Long userId) {
+        this.id = id;
+        this.policyName = policyName;
+        this.policyType = policyType;
+        this.premiumAmount = premiumAmount;
+        this.userId = userId;
+    }
+
     // Getters and Setters
 
 

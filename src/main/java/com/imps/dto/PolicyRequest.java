@@ -5,6 +5,15 @@ public class PolicyRequest {
     private String policyType;
     private double premiumAmount;
 
+    public PolicyRequest() {
+    }
+
+    public PolicyRequest(String policyName, String policyType, double premiumAmount) {
+        this.policyName = policyName;
+        this.policyType = policyType;
+        this.premiumAmount = premiumAmount;
+    }
+
     // Getters and Setters
 
     public String getPolicyName() {
